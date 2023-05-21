@@ -40,7 +40,7 @@ from calibre.utils.date import EPOCH, parse_date, utcfromtimestamp, utcnow
 from calibre.utils.filenames import (
     WindowsAtomicFolderMove, ascii_filename, atomic_rename, copyfile_using_links,
     copytree_using_links, hardlink_file, is_case_sensitive, is_fat_filesystem,
-    remove_dir_if_empty, samefile
+    remove_dir_if_empty, samefile, format_filename
 )
 from calibre.utils.formatter_functions import (
     compile_user_template_functions, formatter_functions,
@@ -1337,8 +1337,8 @@ class DB:
         '''
         book_id = ' (%d)' % book_id
         l = self.PATH_LIMIT - (len(book_id) // 2) - 2
-        author = ascii_filename(author)[:l]
-        title  = ascii_filename(title.lstrip())[:l].rstrip()
+        author = format_filename(author)[:l]
+        title  = format_filename(title.lstrip())[:l].rstrip()
         if not title:
             title = 'Unknown'[:l]
         try:
@@ -1347,7 +1347,7 @@ class DB:
         except IndexError:
             author = ''
         if not author:
-            author = ascii_filename(_('Unknown'))
+            author = format_filename(_('Unknown'))
         if author.upper() in WINDOWS_RESERVED_NAMES:
             author += 'w'
         return f'{author}/{title}{book_id}'
@@ -1364,15 +1364,15 @@ class DB:
         l = (self.PATH_LIMIT - (extlen // 2) - 2) if iswindows else ((self.PATH_LIMIT - extlen - 2) // 2)
         if l < 5:
             raise ValueError('Extension length too long: %d' % extlen)
-        author = ascii_filename(author)[:l]
-        title  = ascii_filename(title.lstrip())[:l].rstrip()
+        author = format_filename(author)[:l]
+        title  = format_filename(title.lstrip())[:l].rstrip()
         if not title:
             title = 'Unknown'[:l]
         name   = title + ' - ' + author
         while name.endswith('.'):
             name = name[:-1]
         if not name:
-            name = ascii_filename(_('Unknown'))
+            name = format_filename(_('Unknown'))
         return name
 
     # Database layer API {{{

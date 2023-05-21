@@ -28,12 +28,14 @@ def print(*args, **kwargs):
 class FTS:
 
     def __init__(self, dbref):
+        """init without fts, only control, such as cache..."""
         self.dbref = dbref
         self.pool = Pool(dbref)
         self.init_lock = Lock()
         self.temp_table_counter = count()
 
     def initialize(self, conn):
+        """init db schema if not exist"""
         needs_dirty = False
         with self.init_lock:
             if conn.fts_dbpath is None:
@@ -52,6 +54,7 @@ class FTS:
             self.dirty_existing()
 
     def get_connection(self):
+        """get db connection"""
         db = self.dbref()
         if db is None:
             raise RuntimeError('db has been garbage collected')

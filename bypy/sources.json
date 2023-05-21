@@ -64,7 +64,7 @@
         "unix": {
             "filename": "zlib-1.2.11.tar.xz",
             "hash": "sha256:4ff941449631ace0d4d203e3483be9dbc9da454084111f97ea0a2114e19bf066",
-            "urls": ["https://zlib.net/{filename}"]
+            "urls": ["https://zlib.net/fossils/{filename}"]
         }
     },
 
@@ -147,8 +147,8 @@
     {
         "name": "openssl",
         "unix": {
-            "filename": "openssl-1.1.1l.tar.gz",
-            "hash": "sha256:0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1",
+            "filename": "openssl-1.1.1q.tar.gz",
+            "hash": "sha256:d7939ce614029cdff0b6c20f0e2e5703158a489a72b2507b8bd51bf8c8fd10ca",
             "urls": ["https://www.openssl.org/source/{filename}"]
         }
     },
@@ -283,8 +283,8 @@
         },
         "windows": {
             "filename": "libiconv-for-Windows-1.16.zip",
-            "hash": "sha256:d542e635cad954a62a2b451b5644e855b848398917e93adf46d8da4c9cc88b6d",
-            "urls": ["https://github.com/pffang/libiconv-for-Windows/archive/v1.16.zip"]
+            "hash": "sha256:e07cbbcf1c2c801b85f899da2c737b5dcb786b58efe04eb6aa342b37bf39eb1c",
+            "urls": ["https://github.com/noogel/libiconv-for-Windows/archive/refs/tags/v1.16.zip"]
         }
     },
 
@@ -760,7 +760,7 @@
         "name": "apsw",
         "unix": {
             "filename": "apsw-3.36.0-r1.zip",
-            "hash": "sha256:17355c39a8cdb9b9cd75b76d883b624c0dd05f80a6677c693b67c343c2381871",
+            "hash": "sha256:3aa143124ce023744f8b32bbf0c6c68f2680dc4e89cd4f2d8ee9bc237753abc9",
             "urls": ["https://github.com/rogerbinns/apsw/releases/download/3.36.0-r1/{filename}"]
         }
     },

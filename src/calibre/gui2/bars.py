@@ -200,7 +200,7 @@ class ToolBar(QToolBar):  # {{{
                     ac.setVisible(False)
             elif what == 'Donate':
                 self.donate_button = create_donate_button(self.donate_action)
-                self.addWidget(self.donate_button)
+                # self.addWidget(self.donate_button)
                 self.donate_button.setIconSize(self.iconSize())
                 self.donate_button.setToolButtonStyle(self.toolButtonStyle())
                 self.showing_donate = True

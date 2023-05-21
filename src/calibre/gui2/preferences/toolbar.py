@@ -108,7 +108,8 @@ class AllModel(BaseModel):
         self._data = self.get_all_actions(current)
 
     def get_all_actions(self, current):
-        all = list(self.gui.iactions.keys()) + ['Donate', 'Location Manager']
+        # all = list(self.gui.iactions.keys()) + ['Donate', 'Location Manager']
+        all = list(self.gui.iactions.keys()) + ['Location Manager']
         all = [x for x in all if x not in current] + [None]
         all = [self.name_to_action(x, self.gui) for x in all]
         all = [x for x in all if self.key not in x.dont_add_to]
